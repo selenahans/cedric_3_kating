@@ -89,3 +89,41 @@ body {
     text-align: center;
     height: 100%;
 }
+
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0F9447;
+    border-radius: 5px;
+}
+
+/* Animation Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth Accordion */
+.accordion-content {
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}

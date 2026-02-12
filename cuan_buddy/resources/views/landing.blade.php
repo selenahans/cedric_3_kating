@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuan Buddy - Teman Cuanmu</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -27,53 +29,11 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #0F9447;
-            border-radius: 5px;
-        }
-
-        /* Animation Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Smooth Accordion */
-        .accordion-content {
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-            max-height: 0;
-            overflow: hidden;
-        }
-    </style>
 </head>
 
-<body class="bg-[#F8FAFC] text-slate-900 selection:bg-emerald-100 selection:text-emerald-700 overflow-x-hidden relative">
-    <x-background/>
+<body
+    class="bg-[#F8FAFC] text-slate-900 selection:bg-emerald-100 selection:text-emerald-700 overflow-x-hidden relative">
+    <x-background />
     <nav class="fixed w-full z-50 glass border-b border-slate-200/60 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between h-20 items-center">
@@ -424,99 +384,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // 1. MOBILE MENU TOGGLE
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        let isMenuOpen = false;
-
-        btn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                menu.classList.remove('translate-y-[-100%]', 'opacity-0', 'pointer-events-none');
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            } else {
-                menu.classList.add('translate-y-[-100%]', 'opacity-0', 'pointer-events-none');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Close menu when link is clicked
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                isMenuOpen = false;
-                menu.classList.add('translate-y-[-100%]', 'opacity-0', 'pointer-events-none');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            });
-        });
-
-        // 2. FAQ ACCORDION
-        const faqBtns = document.querySelectorAll('.faq-btn');
-
-        faqBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
-                const icon = btn.querySelector('svg');
-
-                // Toggle logic
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                    icon.classList.remove('rotate-180');
-                    btn.classList.remove('text-emerald-600');
-                } else {
-                    // Close other open FAQs (Optional - remove this block if you want multiple open)
-                    document.querySelectorAll('.accordion-content').forEach(el => el.style.maxHeight = null);
-                    document.querySelectorAll('.faq-btn svg').forEach(el => el.classList.remove('rotate-180'));
-                    document.querySelectorAll('.faq-btn').forEach(el => el.classList.remove('text-emerald-600'));
-
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    icon.classList.add('rotate-180');
-                    btn.classList.add('text-emerald-600');
-                }
-            });
-        });
-
-        // 3. SCROLL REVEAL ANIMATION
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            const elementVisible = 150;
-
-            revealElements.forEach((reveal) => {
-                const elementTop = reveal.getBoundingClientRect().top;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveal.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', revealOnScroll);
-        // Trigger once on load
-        revealOnScroll();
-
-        // 4. NAVBAR SCROLL EFFECT
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-sm');
-                navbar.classList.replace('h-20', 'h-16');
-            } else {
-                navbar.classList.remove('shadow-sm');
-                navbar.classList.replace('h-16', 'h-20');
-            }
-        });
-    </script>
 </body>
 
 </html>
