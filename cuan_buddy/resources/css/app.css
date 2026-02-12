@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -7,9 +7,85 @@
 @source "../**/*.vue";
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-hijau-tua: #0F9447;
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    --color-hijau-tua: #0f9447;
     --color-soft-pink: #fbcfe8;
     --color-dark-carbon: #121212;
+}
+
+.responsive-logo {
+    /* Menyesuaikan tinggi logo agar tidak melebihi tinggi teks */
+    height: 2rem; /* Sama dengan h-8 di Tailwind */
+    width: auto; /* Menjaga aspek rasio agar tidak gepeng */
+    object-fit: contain;
+    display: block;
+}
+
+/* Penyesuaian untuk layar kecil jika logo dirasa terlalu besar */
+@media (max-width: 640px) {
+    .responsive-logo {
+        height: 1.75rem;
+    }
+}
+/* style.css */
+
+/* Pengaturan Font Utama */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Efek Kaca (Glassmorphism) */
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Support Safari */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0F9447;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0b6e34;
+}
+
+/* Animasi Scroll Reveal (Muncul pelan-pelan) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animasi Accordion (FAQ) */
+.accordion-content {
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Helper Class untuk memusatkan gambar di fitur (Opsional agar HTML lebih bersih) */
+.feature-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
 }
