@@ -34,3 +34,6 @@ Route::get('/onboarding/financial-setup', function () {
 Route::get('/transaksi/index', function () {
     return view('transaksi.index');
 })->name('transaksi.index');  
+Route::get('/laporan/index', function () {
+    return view('laporan.index');
+})->name('laporan.index');  
