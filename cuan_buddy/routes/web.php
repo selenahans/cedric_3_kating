@@ -30,3 +30,7 @@ Route::get('/onboarding/pet-selection', function () {
 Route::get('/onboarding/financial-setup', function () {
     return view('onboarding.financial-setup');
 })->name('onboarding.financial-setup');  
+
+Route::get('/finance/index', function () {
+    return view('finance.index');
+})->name('finance.index');  
