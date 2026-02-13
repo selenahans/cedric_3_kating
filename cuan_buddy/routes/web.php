@@ -32,5 +32,5 @@ Route::get('/onboarding/financial-setup', function () {
 })->name('onboarding.financial-setup');  
 
 Route::get('/transaksi/index', function () {
-    return view('finance.index');
-})->name('finance.index');  
+    return view('transaksi.index');
+})->name('transaksi.index');  
