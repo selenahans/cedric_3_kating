@@ -7,7 +7,6 @@
     <title>Masuk - Cuan Buddy</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
         tailwind.config = {
             theme: {
@@ -16,6 +15,7 @@
                         'float': 'float 6s ease-in-out infinite',
                         'float-delayed': 'float 6s ease-in-out 3s infinite',
                         'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
+                        blob: "blob 7s infinite",
                     },
                     keyframes: {
                         float: {
@@ -26,6 +26,12 @@
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
+                         blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        },
                     },
                     fontFamily: {
                         'jakarta': ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -43,36 +49,47 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
+        .input-field:-webkit-autofill,
+        .input-field:-webkit-autofill:hover,
+        .input-field:-webkit-autofill:focus,
+        .input-field:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #F8FAFC inset !important;
+            -webkit-text-fill-color: #0a2d0a !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        .input-field:focus:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+        }
+
         /* Styling Input Custom */
         .input-field {
             width: 100%;
             border: 1.5px solid #E2E8F0;
             border-radius: 0.75rem;
-            /* rounded-xl */
             padding: 1rem 1.25rem;
             font-size: 0.95rem;
-            color: #1E293B;
+            color: #0a2d0a;
             transition: all 0.3s ease;
             background-color: #F8FAFC;
         }
 
         .input-field:focus {
             outline: none;
-            border-color: #059669;
-            /* Emerald 600 */
+            border-color: #34a20d;
             background-color: #ffffff;
             box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
         }
 
         .input-field::placeholder {
-            color: #94A3B8;
+            color: #18291f;
         }
 
         /* Social Button Hover Effect */
         .social-btn:hover {
-            border-color: #059669;
+            border-color: #339412;
             transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(5, 131, 49, 0.889);
         }
     </style>
 </head>
@@ -84,15 +101,22 @@
         <div class="w-full lg:w-1/2 flex items-center justify-center p-8 lg:p-16 relative bg-white z-10">
             <div class="w-full max-w-[420px] animate-fade-in-up">
 
-                <div class="lg:hidden mb-8 flex items-center gap-2">
-                    <div
-                        class="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold">
-                        C</div>
-                    <span class="font-bold text-xl">Cuan Buddy</span>
+                <div class="lg:hidden mb-8 flex items-center gap-3 select-none">
+                    <div class="flex-shrink-0">
+                        <img src="{{ url('images/logo_cuan_buddy.webp') }}" alt="Logo Cuan Buddy"
+                            class="w-10 h-10 object-contain responsive-logo content-logo" style="display:block;">
+                    </div>
+
+                    <div class="flex items-center text-[26px] leading-none tracking-tight"
+                        style="font-family: 'Lufga', sans-serif;">
+                        <span class="font-semibold" style="color: #358557;">cuan</span>
+                        <span class="font-semibold ml-[2px]" style="color: #2F3130;">buddy</span>
+                    </div>
                 </div>
 
-                <h1 class="text-3xl lg:text-4xl font-extrabold mb-3 text-slate-900">Selamat datang kembali!</h1>
-                <p class="text-slate-500 mb-8 leading-relaxed">Rawat pet-mu dengan cara mengatur keuanganmu. Bangun masa depan finansial yang sehat sambil bermain bersama Cuan Buddy.</p>
+                <h1 class="text-3xl lg:text-4xl font-extrabold mb-3 text-[#308156]">Selamat datang kembali!</h1>
+                <p class="text-[#2F3130] mb-8 leading-relaxed">Rawat pet-mu dengan cara mengatur keuanganmu. Bangun masa
+                    depan finansial yang sehat sambil bermain bersama Cuan Buddy.</p>
 
                 <form action="#" method="POST" class="space-y-5">
                     <div class="group">
@@ -126,48 +150,49 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <input id="remember-me" name="remember-me" type="checkbox"
-                                class="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded">
-                            <label for="remember-me" class="ml-2 block text-sm text-slate-500">Ingat saya</label>
+                                class="h-4 w-4 text-[#308156] focus:ring-[#308156] border-gray-300 rounded">
+                            <label for="remember-me" class="ml-2 block text-sm text-[#2F3130]">Ingat saya</label>
                         </div>
-                        <a href="#" class="text-sm font-semibold text-slate-500 hover:text-emerald-600 transition">Lupa
+                        <a href="#" class="text-sm font-semibold text-[#2F3130] hover:text-[#308156] transition">Lupa
                             Kata Sandi?</a>
                     </div>
 
                     <button type="submit"
-                        class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition transform hover:scale-[1.02] shadow-lg shadow-slate-200">
+                        class="w-full bg-[#308156] text-white font-bold py-4 rounded-xl hover:bg-[#2a6a47] transition transform hover:scale-[1.02] shadow-lg shadow-[#a3d18a]">
                         Masuk
                     </button>
                 </form>
 
                 <div class="relative my-8">
                     <div class="absolute inset-0 flex items-center">
-                        <div class="w-full border-t border-slate-200"></div>
+                        <div class="w-full border-t border-[#96B688]"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                        <span class="px-4 bg-white text-slate-400 font-medium">atau lanjutkan dengan</span>
+                        <span class="px-4 bg-white text-[#2F3130] font-medium">atau lanjutkan dengan</span>
                     </div>
                 </div>
 
                 <div class="flex justify-center gap-4">
                     <button
-                        class="social-btn w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center bg-white transition hover:bg-slate-50">
+                        class="social-btn w-14 h-14 rounded-full border border-[#B2EE98] flex items-center justify-center bg-white transition hover:bg-slate-50">
                         <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-6 h-6" alt="Google">
                     </button>
                     <button
-                        class="social-btn w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center bg-white transition hover:bg-slate-50">
+                        class="social-btn w-14 h-14 rounded-full border border-[#B2EE98] flex items-center justify-center bg-white transition hover:bg-slate-50">
                         <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-6 h-6"
                             alt="Facebook">
                     </button>
                 </div>
 
-                <p class="mt-8 text-center text-slate-500 text-sm">
+                <p class="mt-8 text-center text-[#2F3130] text-sm">
                     Belum punya akun? <a href="#"
-                        class="font-bold text-emerald-600 hover:text-emerald-700 transition">Daftar sekarang!</a>
+                        class="font-bold text-[#308156] hover:text-[#2a6a47] transition">Daftar sekarang!</a>
                 </p>
             </div>
         </div>
 
         <div class="hidden lg:flex lg:w-1/2 bg-[#F0FDF4] relative items-center justify-center overflow-hidden">
+            <x-background />
             <div
                 class="absolute w-[600px] h-[600px] bg-emerald-100/60 rounded-full blur-3xl opacity-60 -top-20 -right-20 pointer-events-none">
             </div>
@@ -184,8 +209,7 @@
 
                         <div class="w-full flex-shrink-0 flex flex-col items-center">
                             <div class="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] mb-10">
-                                <img src="https://cdni.iconscout.com/illustration/premium/thumb/woman-meditating-illustration-download-in-svg-png-gif-file-formats--yoga-exercise-healthy-lifestyle-activity-pack-people-illustrations-4760460.png"
-                                    alt="Ilustrasi 1"
+                                <img src="{{ url('images/login/goals2.webp') }}" alt="login"
                                     class="w-full h-full object-contain drop-shadow-2xl animate-float">
                             </div>
                             <h2 class="text-3xl font-bold text-slate-800 mb-3 leading-tight text-center">
@@ -196,8 +220,7 @@
 
                         <div class="w-full flex-shrink-0 flex flex-col items-center">
                             <div class="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] mb-10">
-                                <img src="https://cdni.iconscout.com/illustration/premium/thumb/financial-analysis-illustration-download-in-svg-png-gif-file-formats--report-chart-business-growth-pack-business-illustrations-4760453.png"
-                                    alt="Ilustrasi 2"
+                                <img src="{{ url('images/login/goals1.webp') }}" alt="login"
                                     class="w-full h-full object-contain drop-shadow-2xl animate-float">
                             </div>
                             <h2 class="text-3xl font-bold text-slate-800 mb-3 leading-tight text-center">
@@ -248,38 +271,38 @@
             }
         });
     </script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const rail = document.getElementById('slides-rail');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    const totalSlides = 3;
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const rail = document.getElementById('slides-rail');
+            const dots = document.querySelectorAll('.dot');
+            let currentSlide = 0;
+            const totalSlides = 3;
 
-    function updateSlide() {
-        // Geser rail berdasarkan index (0%, -100%, -200%)
-        rail.style.transform = `translateX(-${currentSlide * 100}%)`;
+            function updateSlide() {
+                // Geser rail berdasarkan index (0%, -100%, -200%)
+                rail.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-        // Update Indikator Dot
-        dots.forEach((dot, i) => {
-            if (i === currentSlide) {
-                dot.classList.add('bg-emerald-600', 'w-8');
-                dot.classList.remove('bg-slate-300', 'w-2.5');
-            } else {
-                dot.classList.add('bg-slate-300', 'w-2.5');
-                dot.classList.remove('bg-emerald-600', 'w-8');
+                // Update Indikator Dot
+                dots.forEach((dot, i) => {
+                    if (i === currentSlide) {
+                        dot.classList.add('bg-emerald-600', 'w-8');
+                        dot.classList.remove('bg-slate-300', 'w-2.5');
+                    } else {
+                        dot.classList.add('bg-slate-300', 'w-2.5');
+                        dot.classList.remove('bg-emerald-600', 'w-8');
+                    }
+                });
             }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlide();
+            }
+
+            // Ganti slide setiap 4 detik
+            setInterval(nextSlide, 4000);
         });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlide();
-    }
-
-    // Ganti slide setiap 4 detik
-    setInterval(nextSlide, 4000);
-});
-</script>
+    </script>
 
 </body>
 

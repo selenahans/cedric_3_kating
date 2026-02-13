@@ -39,12 +39,20 @@
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-2.5 z-50">
                     <div>
-                        <div class="w-8 h-8 rounded-lg flex items-center justify-center ">
-                            <img src="{{ url('images/logo_cuan_buddy.webp') }}" alt="LOGO PIMUS"
-                                class="responsive-logo content-logo" style="display:block;">
+                        <div class="flex items-center gap-3 select-none">
+                            <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                                <img src="{{ url('images/logo_cuan_buddy.webp') }}" alt="Logo Cuan Buddy"
+                                    class="w-full h-full object-contain responsive-logo content-logo"
+                                    style="display:block;">
+                            </div>
+
+                            <div class="flex items-center text-[26px] leading-none tracking-tight"
+                                style="font-family: 'Lufga', sans-serif;">
+                                <span class="font-semibold" style="color: #358557;">cuan</span>
+                                <span class="font-semibold ml-[2px]" style="color: #2F3130;">buddy</span>
+                            </div>
                         </div>
                     </div>
-                    <span class="text-xl font-bold tracking-tight text-slate-800">Cuan Buddy</span>
                 </div>
 
                 <div class="hidden md:flex items-center gap-10">
@@ -363,16 +371,20 @@
     <footer class="bg-slate-50 pt-20 pb-12 px-6 mt-20">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-12 border-b border-slate-200">
-                <div class="flex items-center gap-2.5">
-                    <div
-                        class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold text-sm italic">
-                        CB</div>
-                    <span class="font-bold text-slate-800 text-xl">Cuan Buddy</span>
+                <div class="flex items-center gap-3 select-none">
+                    <img src="{{ url('images/logo_cuan_buddy.webp') }}" alt="Logo Cuan Buddy"
+                        class="w-10 h-10 object-contain flex-shrink-0" style="display:block;">
+
+                    <div class="flex items-center text-[26px] leading-none tracking-tight"
+                        style="font-family: 'Lufga', sans-serif;">
+                        <span class="font-semibold" style="color: #358557;">cuan</span>
+                        <span class="font-semibold ml-[2px]" style="color: #2F3130;">buddy</span>
+                    </div>
                 </div>
                 <div class="flex gap-8">
-                    <a href="#" class="text-slate-500 hover:text-[#0F9447] transition text-sm font-bold">Twitter</a>
+                    <a href="#" class="text-slate-500 hover:text-[#0F9447] transition text-sm font-bold">X</a>
                     <a href="#" class="text-slate-500 hover:text-[#0F9447] transition text-sm font-bold">Instagram</a>
-                    <a href="#" class="text-slate-500 hover:text-[#0F9447] transition text-sm font-bold">Github</a>
+                    <a href="#" class="text-slate-500 hover:text-[#0F9447] transition text-sm font-bold">Youtube</a>
                 </div>
             </div>
             <div class="pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
