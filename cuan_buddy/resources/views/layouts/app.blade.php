@@ -3,30 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuan Buddy</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>@yield('title', 'Dashboard - Cuan Buddy')</title>
+
+    {{-- Script & Library (Tailwind, ApexCharts, Fonts) --}}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#308156',
+                        primaryLight: '#e6f4ea',
+                        darkText: '#1e293b',
+                    },
+                    fontFamily: {
+                        'jakarta': ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .hover-card { transition: all 0.3s ease; }
+        .hover-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1); }
+        
+        /* Animasi Custom untuk Header */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(0deg); }
+            20% { transform: rotate(15deg); }
+            40% { transform: rotate(-10deg); }
+            60% { transform: rotate(5deg); }
+            80% { transform: rotate(-5deg); }
+        }
+        .group-hover\:animate-swing:hover {
+            animation: swing 0.5s ease-in-out;
+        }
+    </style>
 </head>
-<body class="bg-[#F8F9FD] text-gray-800 font-sans antialiased" x-data="{ sidebarOpen: false }">
+
+<body class="bg-slate-50 text-slate-800">
 
     <div class="flex h-screen overflow-hidden">
-        
-        <aside class="hidden lg:flex flex-col w-64 bg-white border-r border-gray-100 h-full fixed inset-y-0 left-0 z-50">
-            @include('components.navbar')
-        </aside>
 
-        <div class="flex-1 flex flex-col lg:ml-64 transition-all duration-300">
+        {{-- Memanggil Component Navbar Samping (Sidebar) --}}
+        @include('components.navbar')
+
+        {{-- Main Content Wrapper --}}
+        <main class="flex-1 lg:ml-64 h-full overflow-y-auto bg-slate-50 flex flex-col">
             
-            <header class="bg-[#F8F9FD] px-8 py-6">
-                @include('components.header')
-            </header>
+            {{-- Memanggil Component Header Atas --}}
+            @include('components.header')
 
-            <main class="flex-1 overflow-y-auto px-8 pb-8">
+            {{-- Tempat Konten Berubah-ubah --}}
+            <div class="p-6 lg:p-10 max-w-7xl mx-auto space-y-8 w-full">
                 @yield('content')
-            </main>
+            </div>
 
-        </div>
+        </main>
     </div>
+
+    {{-- Stack untuk Script khusus per halaman --}}
+    @stack('scripts')
 
 </body>
 </html>
