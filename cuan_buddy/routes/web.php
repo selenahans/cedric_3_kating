@@ -22,3 +22,11 @@ Route::get('register', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/onboarding/pet-selection', function () {
+    return view('onboarding.pet-selection');
+})->name('onboarding.pet-selection');   
+
+Route::get('/onboarding/financial-setup', function () {
+    return view('onboarding.financial-setup');
+})->name('onboarding.financial-setup');  
