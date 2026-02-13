@@ -14,3 +14,11 @@ Route::get('login', function () {
 Route::get('register', function () {
     return view('register');
 });
+
+// Route::get('/', function () {
+//     return redirect()->route('dashboard');
+// });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
