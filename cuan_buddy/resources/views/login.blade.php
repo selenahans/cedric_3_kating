@@ -62,7 +62,6 @@
             -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
         }
 
-        /* Styling Input Custom */
         .input-field {
             width: 100%;
             border: 1.5px solid #E2E8F0;
@@ -85,11 +84,22 @@
             color: #18291f;
         }
 
-        /* Social Button Hover Effect */
+        .social-btn {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid #E2E8F0; 
+        }
+
         .social-btn:hover {
-            border-color: #339412;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(5, 131, 49, 0.889);
+            border-color: #34d399; 
+            background-color: #F0FDF4; 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.15), 
+                        0 4px 6px -2px rgba(16, 185, 129, 0.1); 
+        }
+        .social-btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px -3px rgba(16, 185, 129, 0.15);
         }
     </style>
 </head>
@@ -174,13 +184,14 @@
 
                 <div class="flex justify-center gap-4">
                     <button
-                        class="social-btn w-14 h-14 rounded-full border border-[#B2EE98] flex items-center justify-center bg-white transition hover:bg-slate-50">
-                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-6 h-6" alt="Google">
+                        class="social-btn w-full py-3 px-4 rounded-xl border border-slate-200 flex items-center justify-center bg-white transition gap-3 text-sm font-semibold">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
+                        Google
                     </button>
                     <button
-                        class="social-btn w-14 h-14 rounded-full border border-[#B2EE98] flex items-center justify-center bg-white transition hover:bg-slate-50">
-                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-6 h-6"
-                            alt="Facebook">
+                        class="social-btn w-full py-3 px-4 rounded-xl border border-slate-200 flex items-center justify-center bg-white transition gap-3 text-sm font-semibold">
+                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5"
+                            alt="Facebook"> Facebook
                     </button>
                 </div>
 
@@ -191,8 +202,7 @@
             </div>
         </div>
 
-        <div class="hidden lg:flex lg:w-1/2 bg-[#F0FDF4] relative items-center justify-center overflow-hidden">
-            <x-background />
+        <div class="hidden lg:flex lg:w-1/2 bg-[#ECFFE4] relative items-center justify-center overflow-hidden">
             <div
                 class="absolute w-[600px] h-[600px] bg-emerald-100/60 rounded-full blur-3xl opacity-60 -top-20 -right-20 pointer-events-none">
             </div>
