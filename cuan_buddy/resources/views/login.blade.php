@@ -96,13 +96,13 @@
 
                 <form action="#" method="POST" class="space-y-5">
                     <div class="group">
-                        <label for="username" class="sr-only">Username</label>
+                        <label for="username" class="sr-only">Nama Pengguna</label>
                         <input type="text" name="username" id="username" placeholder="Username" class="input-field peer"
                             required>
                     </div>
 
                     <div class="relative group">
-                        <label for="password" class="sr-only">Password</label>
+                        <label for="password" class="sr-only">Kata Sandi</label>
                         <input type="password" name="password" id="password" placeholder="Password"
                             class="input-field peer pr-12" required>
 
