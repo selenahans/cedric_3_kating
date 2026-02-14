@@ -37,3 +37,9 @@ Route::get('/transaksi/index', function () {
 Route::get('/laporan/index', function () {
     return view('laporan.index');
 })->name('laporan.index');  
+Route::get('/pet/index', function () {
+    return view('pet.index');
+})->name('pet.index');  
+Route::get('/pengaturan/index', function () {
+    return view('pengaturan.index');
+})->name('pengaturan.index');  
