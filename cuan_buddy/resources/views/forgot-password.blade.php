@@ -106,7 +106,7 @@
                         
                         <div class="w-full flex-shrink-0 flex flex-col items-center">
                             <div class="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] mb-10">
-                                <img src="{{ url('images/login/goals3.webp') }}" alt="security" class="w-full h-full object-contain drop-shadow-2xl animate-float">
+                                <img src="{{ url('images/forgotpass.webp') }}" alt="security" class="w-full h-full object-contain drop-shadow-2xl animate-float">
                             </div>
                             <h2 class="text-3xl font-bold text-slate-800 mb-3 leading-tight text-center">
                                 Keamanan data kamu <br> adalah <span class="text-emerald-600">Prioritas Kami</span>
