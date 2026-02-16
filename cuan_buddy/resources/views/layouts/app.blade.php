@@ -110,8 +110,8 @@
             @include('components.header')
 
             {{-- Tempat Konten Berubah-ubah --}}
-            {{-- <div class="p-6 lg:p-10 max-w-7xl mx-auto space-y-8 w-full"> --}}
-            <div class="p-6 lg:p-10 w-full space-y-8 @yield('container_style', 'max-w-7xl mx-auto')"></div>
+            <div class="p-6 lg:p-10 max-w-7xl mx-auto space-y-8 w-full">
+            {{-- <div class="p-6 lg:p-10 w-full space-y-8 @yield('container_style', 'max-w-7xl mx-auto')"> --}}
                 @yield('content')
             </div>
 

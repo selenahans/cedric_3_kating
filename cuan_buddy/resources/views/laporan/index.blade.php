@@ -201,47 +201,6 @@
         </div>
     </div>
 
-    {{-- 5. ACHIEVEMENTS SECTION (Gamification) --}}
-    <div class="mb-8">
-        <div class="flex justify-between items-center mb-4 px-1">
-            <h3 class="font-bold text-lg text-slate-800">Achievements Bulan Ini</h3>
-            <a href="#" class="text-xs font-bold text-primary hover:underline">Lihat Semua</a>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {{-- Badge 1: Unlocked --}}
-            <div class="bg-gradient-to-br from-yellow-50 to-white border border-yellow-100 p-4 rounded-2xl flex flex-col items-center text-center shadow-sm">
-                <div class="text-3xl mb-2 drop-shadow-md">👑</div>
-                <h4 class="text-sm font-bold text-slate-800">Hemat Champion</h4>
-                <p class="text-[10px] text-slate-500 mt-1">Saving rate > 30%</p>
-                <span class="mt-2 bg-yellow-100 text-yellow-700 text-[10px] font-bold px-2 py-0.5 rounded-full">Unlocked</span>
-            </div>
-
-            {{-- Badge 2: Unlocked --}}
-            <div class="bg-white border border-slate-100 p-4 rounded-2xl flex flex-col items-center text-center shadow-sm">
-                <div class="text-3xl mb-2">📝</div>
-                <h4 class="text-sm font-bold text-slate-800">Rajin Catat</h4>
-                <p class="text-[10px] text-slate-500 mt-1">Konsisten 7 hari</p>
-                <span class="mt-2 bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full">Unlocked</span>
-            </div>
-
-            {{-- Badge 3: Locked --}}
-            <div class="bg-slate-50 border border-slate-100 p-4 rounded-2xl flex flex-col items-center text-center opacity-70 grayscale">
-                <div class="text-3xl mb-2">🥗</div>
-                <h4 class="text-sm font-bold text-slate-600">No Junk Food</h4>
-                <p class="text-[10px] text-slate-400 mt-1">0 Transaksi Fastfood</p>
-                <span class="mt-2 bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">Locked</span>
-            </div>
-
-             {{-- Badge 4: Locked --}}
-             <div class="bg-slate-50 border border-slate-100 p-4 rounded-2xl flex flex-col items-center text-center opacity-70 grayscale">
-                <div class="text-3xl mb-2">🚀</div>
-                <h4 class="text-sm font-bold text-slate-600">To The Moon</h4>
-                <p class="text-[10px] text-slate-400 mt-1">Investasi > 1 Juta</p>
-                <span class="mt-2 bg-slate-200 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">Locked</span>
-            </div>
-        </div>
-    </div>
 
     {{-- 6. DETAIL TABLE --}}
     <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
