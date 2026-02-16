@@ -1,0 +1,51 @@
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 24px; /* Rounded khas Cuan Buddy */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* Pembeda Visual */
+.border-expense { border-top: 8px solid #ff4d4d; }
+.border-income { border-top: 8px solid #2ecc71; }
+
+.bg-expense { background: #ff4d4d; }
+.bg-income { background: #2ecc71; }
+
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #444; }
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus { border-color: #6C63FF; }
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
