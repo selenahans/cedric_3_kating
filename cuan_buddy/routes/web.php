@@ -49,3 +49,6 @@ Route::get('/pengaturan/index', function () {
 Route::get('/notifikasi', function () {
     return view('notifikasi.index');
 })->name('notifikasi.index');  
+Route::get('/forgotpass', function () {
+    return view('forgot-password');
+})->name('forgot-password');  
