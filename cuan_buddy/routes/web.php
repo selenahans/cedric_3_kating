@@ -46,3 +46,6 @@ Route::get('/pet/index', function () {
 Route::get('/pengaturan/index', function () {
     return view('pengaturan.index');
 })->name('pengaturan.index');  
+Route::get('/notifikasi', function () {
+    return view('notifikasi.index');
+})->name('notifikasi.index');  
