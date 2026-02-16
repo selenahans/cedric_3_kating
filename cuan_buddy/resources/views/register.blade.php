@@ -231,8 +231,8 @@
 
             <div class="relative z-10 text-center max-w-lg px-6">
                 <div class="relative w-[400px] h-[400px] mx-auto mb-8">
-                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/financial-growth-illustration-download-in-svg-png-gif-file-formats--analysis-chart-report-business-pack-illustrations-4760451.png"
-                        alt="Register Illustration" class="w-full h-full object-contain drop-shadow-2xl animate-float">
+                    <img src="{{ url('images/register/register.webp') }}" alt="register"
+                                    class="w-full h-full object-contain drop-shadow-2xl animate-float">
                 </div>
                 <h2 class="text-3xl font-bold text-slate-800 mb-4 leading-tight">
                     Selangkah lagi menuju <br> <span class="text-emerald-600">Kebebasan Finansial</span>
