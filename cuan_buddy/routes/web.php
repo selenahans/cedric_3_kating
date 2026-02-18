@@ -52,3 +52,6 @@ Route::get('/notifikasi', function () {
 Route::get('/forgotpass', function () {
     return view('forgot-password');
 })->name('forgot-password');  
+Route::get('/success', function () {
+    return view('success');
+})->name('success');  
