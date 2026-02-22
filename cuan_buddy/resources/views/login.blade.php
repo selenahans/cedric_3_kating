@@ -81,7 +81,7 @@
         }
 
         .input-field::placeholder {
-            color: #18291f;
+            color: gray;
         }
 
         .social-btn {
@@ -129,9 +129,10 @@
                     depan finansial yang sehat sambil bermain bersama Cuan Buddy.</p>
 
                 <form action="#" method="POST" class="space-y-5">
+                    @csrf
                     <div class="group">
-                        <label for="username" class="sr-only">Nama Pengguna</label>
-                        <input type="text" name="username" id="username" placeholder="Username" class="input-field peer"
+                        <label for="email" class="sr-only">Email Pengguna</label>
+                        <input type="text" name="email" id="email" placeholder="email" class="input-field peer"
                             required>
                     </div>
 
@@ -182,21 +183,8 @@
                     </div>
                 </div>
 
-                <div class="flex justify-center gap-4">
-                    <button
-                        class="social-btn w-full py-3 px-4 rounded-xl border border-slate-200 flex items-center justify-center bg-white transition gap-3 text-sm font-semibold">
-                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
-                        Google
-                    </button>
-                    <button
-                        class="social-btn w-full py-3 px-4 rounded-xl border border-slate-200 flex items-center justify-center bg-white transition gap-3 text-sm font-semibold">
-                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5"
-                            alt="Facebook"> Facebook
-                    </button>
-                </div>
-
                 <p class="mt-8 text-center text-[#2F3130] text-sm">
-                    Belum punya akun? <a href="#"
+                    Belum punya akun? <a href="register"
                         class="font-bold text-[#308156] hover:text-[#2a6a47] transition">Daftar sekarang!</a>
                 </p>
             </div>

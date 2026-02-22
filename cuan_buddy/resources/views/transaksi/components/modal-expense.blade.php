@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label>Tanggal</label>
-                <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>">
+                <input type="date" name="date" color="red" value="<?php echo date('Y-m-d'); ?>">
             </div>
             <button type="submit" class="btn-submit bg-expense">Simpan Pengeluaran</button>
         </form>

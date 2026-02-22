@@ -43,10 +43,11 @@
         <div class="profile-card group">
             <div class="profile-info">
                 <div class="profile-img-wrapper">
-                    <img src="https://ui-avatars.com/api/?name=Selena+Gomez&background=308156&color=fff" alt="User">
+                    <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&background=308156&color=fff"
+                        alt="User" class="avatar-img">
                 </div>
                 <div>
-                    <p class="profile-name">Selena</p>
+                    <p class="profile-name">{{ Auth::user()->name }}</p>
                     <p class="profile-plan">Free Plan</p>
                 </div>
             </div>

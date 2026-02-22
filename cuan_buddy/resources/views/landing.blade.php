@@ -62,8 +62,8 @@
                         class="text-sm font-semibold text-slate-600 hover:text-[#0F9447] transition">Cara Kerja</a>
                     <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-[#0F9447] transition">FAQ</a>
                     <div class="h-6 w-[1px] bg-slate-200"></div>
-                    <a href="#" class="text-sm font-semibold text-slate-700 hover:text-[#0F9447] transition">Masuk</a>
-                    <a href="#"
+                    <a href="login" class="text-sm font-semibold text-slate-700 hover:text-[#0F9447] transition">Masuk</a>
+                    <a href="register"
                         class="bg-[#0F9447] text-white px-6 py-3 rounded-xl text-sm font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-200/50">
                         Mulai Gratis
                     </a>

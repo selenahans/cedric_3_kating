@@ -55,3 +55,8 @@ Route::get('/forgotpass', function () {
 Route::get('/success', function () {
     return view('success');
 })->name('success');  
+
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/login', [LoginController::class, 'authenticate']);

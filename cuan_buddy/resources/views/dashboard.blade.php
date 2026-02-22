@@ -116,7 +116,7 @@
                         <img src="https://ui-avatars.com/api/?name=Selena+Gomez&background=308156&color=fff" alt="User">
                     </div>
                     <div>
-                        <p class="text-sm font-bold text-slate-800">Selena</p>
+                        <p class="text-sm font-bold text-slate-800">{{ Auth::user()->name }}</p>
                         <p class="text-xs text-slate-500">Free Plan</p>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                     
                     <div class="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
                         <div class="text-center lg:text-left">
-                            <h2 class="text-2xl lg:text-3xl font-bold mb-1">Halo, Selena! 👋</h2>
+                            <h2 class="text-2xl lg:text-3xl font-bold mb-1">Halo, {{ Auth::user()->name }}! 👋</h2>
                             <p class="text-emerald-50 opacity-90">Terus nabung biar <span class="font-bold text-yellow-200">Si Cermat</span> makin happy!</p>
                         </div>
 
@@ -317,7 +317,7 @@
         
         <div class="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
             <div class="text-center lg:text-left">
-                <h2 class="text-2xl lg:text-3xl font-bold mb-1">Halo, Selena! 👋</h2>
+                <h2 class="text-2xl lg:text-3xl font-bold mb-1">Halo, {{ Auth::user()->name }}! 👋</h2>
                 <p class="text-emerald-50 opacity-90">Terus nabung biar <span class="font-bold text-yellow-200">Si Cermat</span> makin happy!</p>
             </div>
 

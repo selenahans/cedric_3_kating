@@ -74,7 +74,7 @@
             box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
         }
         .input-field::placeholder {
-            color: #18291f;
+            color: gray;
         }
         .social-btn {
             position: relative;
@@ -118,11 +118,12 @@
                 <p class="text-[#2F3130] mb-6 leading-relaxed text-sm lg:text-base">Daftar sekarang dan mulailah
                     mengadopsi pet finansial pertamamu untuk masa depan yang lebih mapan.</p>
 
-                <form action="#" method="POST" class="space-y-4">
+                <form action="register" method="POST" class="space-y-4">
+                    @csrf
                     <div>
-                        <label for="fullname" class="block text-sm font-semibold text-[#0E6436] mb-1.5 ml-1">Nama
+                        <label for="name" class="block text-sm font-semibold text-[#0E6436] mb-1.5 ml-1">Nama
                             Lengkap</label>
-                        <input type="text" name="fullname" id="fullname" placeholder="Masukkan nama lengkap"
+                        <input type="text" name="name" id="name" placeholder="Masukkan nama lengkap"
                             class="input-field" required>
                     </div>
 
@@ -154,14 +155,14 @@
                         </div>
 
                         <div class="relative">
-                            <label for="confirm_password"
+                            <label for="password_confirmation"
                                 class="block text-sm font-semibold text-[#0E6436] mb-1.5 ml-1">Konfirmasi</label>
                             <div class="relative">
-                                <input type="password" name="confirm_password" id="confirm_password"
-                                    placeholder="••••••••" class="input-field pr-11" required>
+                                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="••••••••"
+                                    class="input-field pr-11" required>
                                 <button type="button"
                                     class="toggle-pass absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-emerald-600 transition p-1"
-                                    data-target="confirm_password">
+                                    data-target="password_confirmation">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -192,30 +193,8 @@
                     </button>
                 </form>
 
-                <div class="relative my-8">
-                    <div class="absolute inset-0 flex items-center">
-                        <div class="w-full border-t border-[#96B688]"></div>
-                    </div>
-                    <div class="relative flex justify-center text-sm">
-                        <span class="px-4 bg-white text-[#2F3130] font-medium">atau daftar dengan</span>
-                    </div>
-                </div>
-
-                <div class="flex justify-center gap-4">
-                    <button
-                        class="social-btn w-full py-3 px-4 rounded-xl border border-slate-200 flex items-center justify-center bg-white transition gap-3 text-sm font-semibold">
-                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
-                        Google
-                    </button>
-                    <button
-                        class="social-btn w-full py-3 px-4 rounded-xl border border-slate-200 flex items-center justify-center bg-white transition gap-3 text-sm font-semibold">
-                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5"
-                            alt="Facebook"> Facebook
-                    </button>
-                </div>
-
                 <p class="mt-8 text-center text-slate-500 text-sm">
-                    Sudah punya akun? <a href="login.html"
+                    Sudah punya akun? <a href="login"
                         class="font-bold text-[#308156] hover:text-[#2a6a47] transition">Masuk di sini</a>
                 </p>
             </div>

@@ -16,6 +16,8 @@
     --color-dark-carbon: #121212;
 }
 
+
+
 .responsive-logo {
     /* Menyesuaikan tinggi logo agar tidak melebihi tinggi teks */
     height: 2rem; /* Sama dengan h-8 di Tailwind */
@@ -108,6 +110,7 @@ body {
     background: #0F9447;
     border-radius: 5px;
 }
+
 
 /* Animation Classes */
 .reveal {
