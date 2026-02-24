@@ -10,9 +10,9 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', function () {
     return view('landing');
 });
-// Route::get('landing', function () {
-//     return view('landing');
-// });
+Route::get(uri: 'notfound', action: function () {
+    return view('not-found');
+});
 
 
 // Route::get('/', function () {
