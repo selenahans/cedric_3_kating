@@ -75,10 +75,10 @@
 
             <div class="space-y-4">
                 <h2 class="text-3xl md:text-5xl font-extrabold text-[#308156] tracking-tight">
-                    Dompetnya <span class="text-[#2F3130]">Nyasar!</span>
+                    Nama Pet <span class="text-[#2F3130]">Nyasar!</span>
                 </h2>
                 <p class="text-[#2F3130] text-lg md:text-xl max-w-lg mx-auto leading-relaxed">
-                    Halaman yang kamu cari tidak ditemukan. Yuk, balik ke jalan finansial yang benar!
+                    Pet kamu tersesat di halaman yang tidak ada. Yuk balik ke dashboard!
                 </p>
             </div>
 
@@ -95,7 +95,7 @@
             </div>
 
             <div class="mt-16 text-[#2F3130]/40 text-sm font-medium">
-                © 2026 Cuan Buddy • <span class="text-[#308156]">Nabung Jadi Seru</span>
+                © 2026 Cuan Buddy • <span class="text-[#308156]">Level up your financial game.</span>
             </div>
         </div>
     </main>
