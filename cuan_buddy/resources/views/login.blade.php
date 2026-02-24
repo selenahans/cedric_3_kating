@@ -164,7 +164,7 @@
                                 class="h-4 w-4 text-[#308156] focus:ring-[#308156] border-gray-300 rounded">
                             <label for="remember-me" class="ml-2 block text-sm text-[#2F3130]">Ingat saya</label>
                         </div>
-                        <a href="#" class="text-sm font-semibold text-[#2F3130] hover:text-[#308156] transition">Lupa
+                        <a href="/forgotpass" class="text-sm font-semibold text-[#2F3130] hover:text-[#308156] transition">Lupa
                             Kata Sandi?</a>
                     </div>
 

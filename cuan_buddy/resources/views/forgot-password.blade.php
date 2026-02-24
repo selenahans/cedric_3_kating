@@ -91,7 +91,7 @@
                 </form>
 
                 <p class="mt-8 text-center text-[#2F3130] text-sm font-medium">
-                    Ingat password-mu? <a href="#" class="font-bold text-[#308156] hover:text-[#2a6a47] transition">Masuk di sini</a>
+                    Ingat password-mu? <a href="login" class="font-bold text-[#308156] hover:text-[#2a6a47] transition">Masuk di sini</a>
                 </p>
             </div>
         </div>
