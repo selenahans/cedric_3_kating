@@ -33,10 +33,13 @@
         }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
 
         .input-field {
             width: 100%;
@@ -75,13 +78,23 @@
 
                 <h1 class="text-3xl lg:text-4xl font-extrabold mb-3 text-[#308156]">Lupa Password?</h1>
                 <p class="text-[#2F3130] mb-8 leading-relaxed">
-                    Jangan khawatir! Buddy akan bantu kirimkan instruksi pemulihan ke email kamu agar kamu bisa kembali merawat pet-mu.
+                    Jangan khawatir! Buddy akan bantu kirimkan instruksi pemulihan ke email kamu agar kamu bisa kembali
+                    merawat pet-mu.
                 </p>
 
-                <form action="#" method="POST" class="space-y-6">
+                @if (session('status'))
+                    <div class="text-green-600 font-semibold mb-4">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+
+                <form action="{{ route('password.email') }}" method="POST">
+                    @csrf
                     <div class="group">
                         <label for="email" class="block text-sm font-bold text-slate-700 mb-2">Alamat Email</label>
-                        <input type="email" name="email" id="email" placeholder="Masukkan email terdaftar" class="input-field" required>
+                        <input type="email" name="email" id="email" placeholder="Masukkan email terdaftar"
+                            class="input-field" required>
                     </div>
 
                     <button type="submit"
@@ -91,22 +104,28 @@
                 </form>
 
                 <p class="mt-8 text-center text-[#2F3130] text-sm font-medium">
-                    Ingat password-mu? <a href="login" class="font-bold text-[#308156] hover:text-[#2a6a47] transition">Masuk di sini</a>
+                    Ingat password-mu? <a href="login"
+                        class="font-bold text-[#308156] hover:text-[#2a6a47] transition">Masuk di sini</a>
                 </p>
             </div>
         </div>
 
         <div class="hidden lg:flex lg:w-1/2 bg-[#ECFFE4] relative items-center justify-center overflow-hidden">
-            <div class="absolute w-[600px] h-[600px] bg-emerald-100/60 rounded-full blur-3xl opacity-60 -top-20 -right-20 pointer-events-none"></div>
-            <div class="absolute w-[400px] h-[400px] bg-blue-100/60 rounded-full blur-3xl opacity-50 bottom-0 left-0 pointer-events-none"></div>
+            <div
+                class="absolute w-[600px] h-[600px] bg-emerald-100/60 rounded-full blur-3xl opacity-60 -top-20 -right-20 pointer-events-none">
+            </div>
+            <div
+                class="absolute w-[400px] h-[400px] bg-blue-100/60 rounded-full blur-3xl opacity-50 bottom-0 left-0 pointer-events-none">
+            </div>
 
             <div class="relative z-10 text-center max-w-lg px-6">
                 <div class="relative w-full max-w-lg mx-auto overflow-hidden">
                     <div id="slides-rail" class="flex transition-transform duration-1000 ease-in-out">
-                        
+
                         <div class="w-full flex-shrink-0 flex flex-col items-center">
                             <div class="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] mb-10">
-                                <img src="{{ url('images/forgotpass.webp') }}" alt="security" class="w-full h-full object-contain drop-shadow-2xl animate-float">
+                                <img src="{{ url('images/forgotpass.webp') }}" alt="security"
+                                    class="w-full h-full object-contain drop-shadow-2xl animate-float">
                             </div>
                             <h2 class="text-3xl font-bold text-slate-800 mb-3 leading-tight text-center">
                                 Keamanan data kamu <br> adalah <span class="text-emerald-600">Prioritas Kami</span>
@@ -120,4 +139,5 @@
     </div>
 
 </body>
+
 </html>

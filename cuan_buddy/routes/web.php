@@ -78,3 +78,18 @@ Route::middleware('guest')->group(function () {
         return view('forgot-password');
     })->name('forgot-password');
 });
+
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])
+    ->name('password.request');
+
+Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])
+    ->name('password.email');
+
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])
+    ->name('password.reset');
+
+Route::post('/reset-password', [ResetPasswordController::class, 'store'])
+    ->name('password.update');
