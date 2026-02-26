@@ -128,7 +128,7 @@
                 <p class="text-[#2F3130] mb-8 leading-relaxed">Rawat pet-mu dengan cara mengatur keuanganmu. Bangun masa
                     depan finansial yang sehat sambil bermain bersama Cuan Buddy.</p>
 
-                <form action="#" method="POST" class="space-y-5">
+                <form action="{{ route('login.process') }}" method="POST" class="space-y-5">
                     @csrf
                     <div class="group">
                         <label for="email" class="sr-only">Email Pengguna</label>

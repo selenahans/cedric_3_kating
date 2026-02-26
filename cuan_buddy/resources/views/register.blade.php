@@ -118,7 +118,7 @@
                 <p class="text-[#2F3130] mb-6 leading-relaxed text-sm lg:text-base">Daftar sekarang dan mulailah
                     mengadopsi pet finansial pertamamu untuk masa depan yang lebih mapan.</p>
 
-                <form action="register" method="POST" class="space-y-4">
+                <form action="{{route('register.process')}}" method="POST" class="space-y-4">
                     @csrf
                     <div>
                         <label for="name" class="block text-sm font-semibold text-[#0E6436] mb-1.5 ml-1">Nama

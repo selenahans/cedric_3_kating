@@ -76,10 +76,9 @@
                     </div>
                 </div>
 
-                <h1 class="text-3xl lg:text-4xl font-extrabold mb-3 text-[#308156]">Lupa Password?</h1>
+                <h1 class="text-3xl lg:text-4xl font-extrabold mb-3 text-[#308156]">Ganti Password</h1>
                 <p class="text-[#2F3130] mb-8 leading-relaxed">
-                    Jangan khawatir! Buddy akan bantu kirimkan instruksi pemulihan ke email kamu agar kamu bisa kembali
-                    merawat pet-mu.
+                    Jangan khawatir! CuanBuddy akan bantu kirimkan instruksi pemulihan melalui email. Pastikan email sama dengan yang terdaftar di akun kamu.
                 </p>
 
                 @if (session('status'))

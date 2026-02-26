@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -22,8 +22,10 @@ class ForgotPasswordController extends Controller
             $request->only('email')
         );
 
-        return $status === Password::RESET_LINK_SENT
-                ? back()->with('status', __($status))
-                : back()->withErrors(['email' => __($status)]);
+        return back()->with(
+            'status',
+            'Jika email terdaftar, link reset telah dikirim.'
+        );
+
     }
 }

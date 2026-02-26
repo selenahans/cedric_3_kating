@@ -72,12 +72,15 @@ Route::middleware('guest')->group(function () {
     Route::get('register', function () {
         return view('register');
     })->name('register');
-    Route::post('/register', [RegisterController::class, 'store']);
-    Route::post('/login', [LoginController::class, 'authenticate']);
-    Route::get('/forgotpass', function () {
+    Route::post('/register', [RegisterController::class, 'store'])
+    ->name('register.process');
+    Route::post('/login', [LoginController::class, 'authenticate'])
+    ->name('login.process');
+});
+
+Route::get('/forgotpass', function () {
         return view('forgot-password');
     })->name('forgot-password');
-});
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
@@ -93,3 +96,14 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create']
 
 Route::post('/reset-password', [ResetPasswordController::class, 'store'])
     ->name('password.update');
+
+    use Illuminate\Support\Facades\Mail;
+
+Route::get('/test-mail', function () {
+    Mail::raw('Test email', function ($message) {
+        $message->to('aileenjoycedavid@gmail.com')
+                ->subject('Test Mail');
+    });
+
+    return 'Email sent';
+});
