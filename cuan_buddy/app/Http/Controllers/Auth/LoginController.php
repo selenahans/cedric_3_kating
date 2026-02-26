@@ -12,13 +12,43 @@ class LoginController extends Controller
 {
     public function authenticate(Request $request)
     {
-        if (
-            Auth::attempt([
-                'email' => $request->email,
-                'password' => $request->password
-            ])
-        ) {
-            return redirect('/dashboard');   
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+
+            $request->session()->regenerate();
+
+            // 🚫 BLOCK IF NOT VERIFIED
+            if (!Auth::user()->hasVerifiedEmail()) {
+
+                Auth::logout();
+
+                return back()->withErrors([
+                    'email' => 'Email belum diverifikasi. Silakan cek inbox Anda.'
+                ]);
+            }
+
+            return redirect()->intended(route('dashboard'));
+        }
+
+        return back()->withErrors([
+            'email' => 'Email atau password salah.'
+        ]);
+    }
+    protected function authenticated(Request $request, $user)
+    {
+        if (!$user->hasVerifiedEmail()) {
+
+            Auth::logout();
+
+            return redirect()->route('login')
+                ->withErrors([
+                    'email' => 'Email belum diverifikasi. Silakan cek inbox Anda.'
+                ]);
         }
     }
+
 }

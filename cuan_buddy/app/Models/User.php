@@ -8,10 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Notifications\ResetPassword;
 use App\Notifications\CustomResetPasswordNotification;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Notifications\CustomVerifyEmail;
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
+
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
@@ -27,12 +30,16 @@ class User extends Authenticatable
         'photo'
     ];
 
-    
+
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new CustomResetPasswordNotification($token));
     }
 
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new CustomVerifyEmail());
+    }
 
     /**
      * The attributes that should be hidden for serialization.

@@ -73,21 +73,25 @@
             background-color: #ffffff;
             box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
         }
+
         .input-field::placeholder {
             color: gray;
         }
+
         .social-btn {
             position: relative;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: 1px solid #E2E8F0; 
+            border: 1px solid #E2E8F0;
         }
+
         .social-btn:hover {
             border-color: #34d399;
             background-color: #F0FDF4;
-            transform: translateY(-3px); 
-            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.15), 
-                        0 4px 6px -2px rgba(16, 185, 129, 0.1); 
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.15),
+                0 4px 6px -2px rgba(16, 185, 129, 0.1);
         }
+
         .social-btn:active {
             transform: translateY(-1px);
             box-shadow: 0 5px 10px -3px rgba(16, 185, 129, 0.15);
@@ -113,7 +117,11 @@
                         <span class="font-semibold ml-[2px]" style="color: #2F3130;">buddy</span>
                     </div>
                 </div>
-
+                @if(session('error'))
+                    <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <h1 class="text-3xl lg:text-4xl font-extrabold mb-2 text-[#308156]">Mulai Perjalananmu!</h1>
                 <p class="text-[#2F3130] mb-6 leading-relaxed text-sm lg:text-base">Daftar sekarang dan mulailah
                     mengadopsi pet finansial pertamamu untuk masa depan yang lebih mapan.</p>
@@ -123,8 +131,8 @@
                     <div>
                         <label for="name" class="block text-sm font-semibold text-[#0E6436] mb-1.5 ml-1">Nama
                             Lengkap</label>
-                        <input type="text" name="name" id="name" placeholder="Masukkan nama lengkap"
-                            class="input-field" required>
+                        <input type="text" name="name" id="name" placeholder="Masukkan nama lengkap" class="input-field"
+                            required>
                     </div>
 
                     <div>
@@ -158,8 +166,8 @@
                             <label for="password_confirmation"
                                 class="block text-sm font-semibold text-[#0E6436] mb-1.5 ml-1">Konfirmasi</label>
                             <div class="relative">
-                                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="••••••••"
-                                    class="input-field pr-11" required>
+                                <input type="password" name="password_confirmation" id="password_confirmation"
+                                    placeholder="••••••••" class="input-field pr-11" required>
                                 <button type="button"
                                     class="toggle-pass absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-emerald-600 transition p-1"
                                     data-target="password_confirmation">
@@ -187,6 +195,11 @@
                         </label>
                     </div>
 
+                    @if ($errors->any())
+                        <p class="text-red-500 text-sm mt-1">
+                            {{ $errors->first() }}
+                        </p>
+                    @endif
                     <button type="submit"
                         class="w-full bg-[#308156] text-white font-bold py-4 rounded-xl hover:bg-[#2a6a47] transition transform hover:scale-[1.02] shadow-lg shadow-[#a3d18a]">
                         Buat Akun Sekarang
@@ -211,7 +224,7 @@
             <div class="relative z-10 text-center max-w-lg px-6">
                 <div class="relative w-[400px] h-[400px] mx-auto mb-8">
                     <img src="{{ url('images/register/register.webp') }}" alt="register"
-                                    class="w-full h-full object-contain drop-shadow-2xl animate-float">
+                        class="w-full h-full object-contain drop-shadow-2xl animate-float">
                 </div>
                 <h2 class="text-3xl font-bold text-slate-800 mb-4 leading-tight">
                     Selangkah lagi menuju <br> <span class="text-emerald-600">Kebebasan Finansial</span>

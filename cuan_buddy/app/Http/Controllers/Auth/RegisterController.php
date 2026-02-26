@@ -11,18 +11,45 @@ class RegisterController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8|confirmed'
-        ]);
+        $request->validate(
+            [
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:8|confirmed'
+            ],
+            [
+                'password.required' => 'Password wajib diisi.',
+                'password.min' => 'Password minimal 8 karakter.',
+                'password.confirmed' => 'Konfirmasi password tidak cocok.',
+                'email.required' => 'Email wajib diisi.',
+                'email.email' => 'Format email tidak valid.',
+                'email.unique' => 'Alamat Email tidak valid.',
+                'name.required' => 'Nama wajib diisi.',
+            ]
+        );
 
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
-        ]);
 
-        return redirect('/login');
+        try {
+
+            $user = User::create([
+                'name' => $validated['name'],
+                'email' => $validated['email'],
+                'password' => Hash::make($validated['password'])
+            ]);
+
+            $user->sendEmailVerificationNotification();
+
+            return redirect()->route('verification.notice');
+
+        } catch (\Exception $e) {
+
+            return back()
+                ->withInput()
+                ->withErrors([
+                    'general' => 'Registrasi gagal. Silakan coba lagi.'
+                ]);
+        }
     }
+
+
 }

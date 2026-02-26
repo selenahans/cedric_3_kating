@@ -87,16 +87,17 @@
         .social-btn {
             position: relative;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: 1px solid #E2E8F0; 
+            border: 1px solid #E2E8F0;
         }
 
         .social-btn:hover {
-            border-color: #34d399; 
-            background-color: #F0FDF4; 
-            transform: translateY(-3px); 
-            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.15), 
-                        0 4px 6px -2px rgba(16, 185, 129, 0.1); 
+            border-color: #34d399;
+            background-color: #F0FDF4;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.15),
+                0 4px 6px -2px rgba(16, 185, 129, 0.1);
         }
+
         .social-btn:active {
             transform: translateY(-1px);
             box-shadow: 0 5px 10px -3px rgba(16, 185, 129, 0.15);
@@ -128,6 +129,12 @@
                 <p class="text-[#2F3130] mb-8 leading-relaxed">Rawat pet-mu dengan cara mengatur keuanganmu. Bangun masa
                     depan finansial yang sehat sambil bermain bersama Cuan Buddy.</p>
 
+                @if (session('status'))
+                    <div
+                        class="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-medium">
+                        {{ session('status') }}
+                    </div>
+                @endif
                 <form action="{{ route('login.process') }}" method="POST" class="space-y-5">
                     @csrf
                     <div class="group">
@@ -164,10 +171,16 @@
                                 class="h-4 w-4 text-[#308156] focus:ring-[#308156] border-gray-300 rounded">
                             <label for="remember-me" class="ml-2 block text-sm text-[#2F3130]">Ingat saya</label>
                         </div>
-                        <a href="/forgotpass" class="text-sm font-semibold text-[#2F3130] hover:text-[#308156] transition">Lupa
+                        <a href="/forgotpass"
+                            class="text-sm font-semibold text-[#2F3130] hover:text-[#308156] transition">Lupa
                             Kata Sandi?</a>
                     </div>
 
+                    @error('email')
+                        <p class="text-red-500 text-sm mt-1">
+                            {{ $message }}
+                        </p>
+                    @enderror
                     <button type="submit"
                         class="w-full bg-[#308156] text-white font-bold py-4 rounded-xl hover:bg-[#2a6a47] transition transform hover:scale-[1.02] shadow-lg shadow-[#a3d18a]">
                         Masuk
