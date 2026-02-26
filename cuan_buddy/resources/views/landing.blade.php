@@ -62,7 +62,8 @@
                         class="text-sm font-semibold text-slate-600 hover:text-[#0F9447] transition">Cara Kerja</a>
                     <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-[#0F9447] transition">FAQ</a>
                     <div class="h-6 w-[1px] bg-slate-200"></div>
-                    <a href="login" class="text-sm font-semibold text-slate-700 hover:text-[#0F9447] transition">Masuk</a>
+                    <a href="login"
+                        class="text-sm font-semibold text-slate-700 hover:text-[#0F9447] transition">Masuk</a>
                     <a href="register"
                         class="bg-[#0F9447] text-white px-6 py-3 rounded-xl text-sm font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-200/50">
                         Mulai Gratis
@@ -254,35 +255,32 @@
                 <div
                     class="group bg-[#0f5c46] border border-emerald-800 p-8 rounded-[2.5rem] hover:bg-[#0F9447] hover:scale-105 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-emerald-900/50 flex flex-col items-center text-center h-full">
                     <div class="w-full h-32 flex items-center justify-center mb-6">
-                        <img src="images/icon_loot.png" alt="Daily Loot Icon"
-                            class="h-full w-auto object-contain filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
-                            onerror="this.src='https://placehold.co/200x200/0f5c46/white?text=Img+1'">
+                        <img src="images/landing/aman.webp" alt="Daily Loot Icon"
+                            class="h-full w-auto object-contain filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Daily Loot & Streak</h3>
+                    <h3 class="text-xl font-bold mb-3">Aman & Privat</h3>
                     <p class="text-emerald-100/70 group-hover:text-white/90 text-sm leading-relaxed">Catat transaksi
                         selama 7 hari berturut-turut untuk mendapatkan "Legendary Loot".</p>
                 </div>
 
                 <div
-                    class="group bg-[#0f5c46] p-8 rounded-[2.5rem] hover:scale-105 hover:shadow-2xl hover:shadow-indigo-900/50 transition-all duration-300 cursor-pointer transform md:-translate-y-4 flex flex-col items-center text-center h-full">
+                    class="group bg-[#0f5c46] border border-emerald-800 p-8 rounded-[2.5rem] hover:bg-[#0F9447] hover:scale-105 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-emerald-900/50 flex flex-col items-center text-center h-full">
                     <div class="w-full h-32 flex items-center justify-center mb-6">
-                        <img src="images/icon_boss.png" alt="Boss Battle Icon"
-                            class="h-full w-auto object-contain filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
-                            onerror="this.src='https://placehold.co/200x200/4f46e5/white?text=Img+2'">
+                        <img src="images/landing/analisis.webp" alt="Leaderboard Icon"
+                            class="h-full w-auto object-contain filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Boss Battle (Budget)</h3>
-                    <p class="text-indigo-100 text-sm leading-relaxed">Tetapkan budget bulanan sebagai "Boss". Jika di
-                        bawah budget, Boss kalah dan kamu naik level!</p>
+                    <h3 class="text-xl font-bold mb-3">Insight Nyata</h3>
+                    <p class="text-emerald-100/70 group-hover:text-white/90 text-sm leading-relaxed">Bandingkan skor
+                        kedisiplinan finansialmu dengan teman di seluruh Indonesia.</p>
                 </div>
 
                 <div
                     class="group bg-[#0f5c46] border border-emerald-800 p-8 rounded-[2.5rem] hover:bg-[#0F9447] hover:scale-105 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-emerald-900/50 flex flex-col items-center text-center h-full">
                     <div class="w-full h-32 flex items-center justify-center mb-6">
-                        <img src="images/icon_leaderboard.png" alt="Leaderboard Icon"
-                            class="h-full w-auto object-contain filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
-                            onerror="this.src='https://placehold.co/200x200/0f5c46/white?text=Img+3'">
+                        <img src="images/landing/anti-ribet.webp" alt="Leaderboard Icon"
+                            class="h-full w-auto object-contain filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Leaderboard</h3>
+                    <h3 class="text-xl font-bold mb-3">Anti Ribet</h3>
                     <p class="text-emerald-100/70 group-hover:text-white/90 text-sm leading-relaxed">Bandingkan skor
                         kedisiplinan finansialmu dengan teman di seluruh Indonesia.</p>
                 </div>
@@ -292,8 +290,7 @@
 
     <section id="faq" class="py-20 px-6 max-w-4xl mx-auto reveal">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Have a question? <br> We are here to
-                answer.</h2>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4"> Masih Penasaran Sama CuanBudy? <br> Yuk, Intip Jawabannya di Sini!</h2>
         </div>
 
         <div class="space-y-4">
