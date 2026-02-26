@@ -138,7 +138,7 @@
                             <label for="password" class="block text-sm font-semibold text-[#0E6436] mb-1.5 ml-1">Kata
                                 Sandi</label>
                             <div class="relative">
-                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                <input type="password" name="password" id="password" placeholder="Isi Kata Sandi"
                                     class="input-field pr-11" required>
                                 <button type="button"
                                     class="toggle-pass absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-emerald-600 transition p-1"
@@ -158,7 +158,7 @@
                             <label for="password_confirmation"
                                 class="block text-sm font-semibold text-[#0E6436] mb-1.5 ml-1">Konfirmasi</label>
                             <div class="relative">
-                                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="••••••••"
+                                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Konfirmasi Ulang"
                                     class="input-field pr-11" required>
                                 <button type="button"
                                     class="toggle-pass absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-emerald-600 transition p-1"
@@ -217,7 +217,7 @@
                     Selangkah lagi menuju <br> <span class="text-emerald-600">Kebebasan Finansial</span>
                 </h2>
                 <p class="text-slate-600">Gabung bersama 10.000+ pengguna lainnya yang telah berhasil mengontrol
-                    pengeluaran mereka dengan bantuan si Cuan.</p>
+                    pengeluaran mereka dengan bantuan Cuan Buddy.</p>
             </div>
         </div>
     </div>
